@@ -1,129 +1,899 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SENA - Programas de Formación | Centro de Comercio y Turismo</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración de la fuente Inter -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practica 14</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f3f4f6;
+      }
 
-<body>
-    <!--Contenedor principal para toda la pagina-->
-    <div class="contenedor-principal">
-        <!--Menu de navegación con logo-->
-        <header class="navbar">
-            <!--Logo-->
-            <div class="navbar-logo">
-                <img src="./imagenes/logo1.jpeg" alt="" width="80px" style="border-radius: 50%;">
-            </div>
+      /* Clase para el banner, manteniendo la imagen como placeholder y haciéndola responsiva */
+      .banner-sena {
+        background-color: #10b981;
+        /* Un color verde SENA */
+        height: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url("https://jrwaredev.com/banner_art_2025.png");
+        background-size: cover;
+        background-position: center;
+      }
+      /* Ajuste para dispositivos móviles */
+      @media (max-width: 400px) {
+        .banner-sena {
+          height: 160px;          
+          background-size: cover;
+          background-position: center;
+          min-height: 160px;
+        }
+      }
+      /* RESPONSIVE - Tablets pequeñas (401px - 768px) */
+      @media (min-width: 401px) and (max-width: 768px) {
+        .banner-sena {
+          height: 200px;
+          background-size: cover;
+          background-position: center;
+          min-height: 200px;
+        }
+      }
 
-            <!--Toggle para movil - boton acordión-->
-            <input type="checkbox" name="" id="menu-toggle" class="menu-toggle">
-            <label for="menu-toggle" class="navbar-icono">&#9776;</label>
-
-            <!--Barra de navegación menu-->
-            <ul class="navbar-menu">
-                <li><a href="#" class="navbar-link">Inicio</a></li>
-                <li><a href="#" class="navbar-link">Servicios</a></li>
-                <li><a href="#" class="navbar-link">Sobre Nosotros</a></li>
-                <li><a href="#" class="navbar-link">Contactanos</a></li>
-            </ul>
-        </header><!--Fin barra de navegación-->
-
-        <!--Inicio Carrusel de imagenes-->
-        <div class="contenedor-carrusel">
-            <div class="imagen1">
-                <h2>Lorem ipsum dolor, sit amet consectetur adipisicing.</h2>
-            </div>
-            <div class="imagen2">
-                <h2>Libero harum fugit aspernatur explicabo magnam deleniti.</h2>
-            </div>
-            <div class="imagen3">
-                <h2>Impedit vitae maiores id quos praesentium ratione?</h2>
-            </div>
+      /* RESPONSIVE - Tablets grandes (769px - 1024px) */
+      @media (min-width: 769px) and (max-width: 1024px) {
+        .banner-sena {
+          height: 400px;
+          background-size: cover;
+          background-position: center;
+          min-height: 400px;
+        }
+        .banner-sena::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(
+            16,
+            185,
+            129,
+            0.05
+          ); /* Overlay sutil para mejor contraste */
+          pointer-events: none;
+          z-index: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Contenedor Principal -->
+    <div class="min-h-screen flex flex-col">
+      <!-- Encabezado Fijo -->
+      <header class="bg-green-700 shadow-lg text-white p-4 sticky top-0 z-10">
+        <div
+          class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center"
+        >
+          <h1 class="text-2xl font-bold mb-2 md:mb-0">SENA Regional Quindío</h1>
+          <!-- Logo al lado del nombre del centro -->
+          <div class="flex items-center space-x-2">
+            <img
+              src="https://placehold.co/32x32/ffffff/047857?text=CCT"
+              alt="Logo CCT"
+              class="h-8 w-8 rounded-full shadow-md border-2 border-white"
+              onerror="this.onerror=null; this.src='https://placehold.co/32x32/ffffff/000?text=Logo'"
+            />
+            <p class="text-sm">Centro de Comercio y Turismo, Armenia</p>
+          </div>
         </div>
-        <!--Fin Carrusel de imagenes-->
-
-        <!--Card de productos de dos tipos-->
-        <div class="contenedor-principal-card">
-            <!--Inicio card tipo 1-->
-            <div class="contenedor-card1">
-                <div class="contenedor-card1">
-                    <h1>Card de Productos 1</h1>
-                </div>
-                <div class="card-productos1">
-                    <img src="./imagenes/Card_hover/img1.jpg" alt="">
-                    <h4>Naturaleza</h4>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
-                    <a href="#">Leer más</a>
-                </div>
-                <div class="card-productos1">
-                    <img src="./imagenes/Card_hover/img2.jpg" alt="">
-                    <h4>Comida</h4>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
-                    <a href="#">Leer más</a>
-                </div>
-                <div class="card-productos1">
-                    <img src="./imagenes/Card_hover/img3.jpg" alt="">
-                    <h4>Tecnologia</h4>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
-                    <a href="#">Leer más</a>
-                </div>
-            </div><!--Fin card tipo 1-->
-            <!--Inicio card tipo 2-->
-            <div class="contenedor-card2">
-                <div class="contenedor-card2">
-                    <h1>Card de Productos 2</h1>
-                </div>
-                <div class="card-productos2">
-                    <img src="./imagenes/Motos/Bwis-blanca-300x273.png" alt="">
-                    <div class="cuerpo-card">
-                        <h4>Moto Bwis 125cc</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                        <a href="#">Leer Más</a>
-                    </div>
-                </div>
-                <div class="card-productos2">
-                    <img src="./imagenes/Motos/moto-royal-300x274.png" alt="">
-                    <div class="cuerpo-card">
-                        <h4>Moto Royal 1000cc</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                        <a href="#">Leer Más</a>
-                    </div>
-                </div>
-                <div class="card-productos2">
-                    <img src="./imagenes/Motos/Pulsar-amarilla-300x273.png" alt="">
-                    <div class="cuerpo-card">
-                        <h4>Moto Pulsar 600cc</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                        <a href="#">Leer Más</a>
-                    </div>
-                </div>
-            </div><!--Fin card tipo 2-->
-        </div><!--Fin Card de productos de dos tipos-->
-        <footer>
-            <div class="contendor-footer">
-                <div class="contenido-footer">
-                    <h4>Contactenos</h4>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint, laudantium!</p>
-                </div>
-                <div class="contenido-footer">
-                    <h4>Ayuda</h4>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint, laudantium!</p>
-                </div>
-                <div class="contenido-footer">
-                    <h4>Siguenos</h4>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint, laudantium!</p>
-                    <a href="https://www.whatsapp.com" target="_blank"><img src="./imagenes/Iconos/whatsapp (1).png" alt="" width="35px"></a>
-                    <a href="#"><img src="./imagenes/Iconos/facebook.png" alt="" width="35px"></a>
-                    <a href="https://www.instagram.com/" target="_blank"><img src="./imagenes/Iconos/instagram.png" alt="" width="35px"></a>
-                    <a href="#"><img src="./imagenes/Iconos/X.png" alt="" width="35px"></a>
-                    <a href="#"><img src="./imagenes/Iconos/linkedin.png" alt="" width="35px"></a>
-                </div>
+      </header>
+      <!-- Contenido Principal -->
+      <main class="flex-grow max-w-7xl mx-auto p-4 md:p-8 w-full">
+        <!-- CONTENEDOR PRINCIPAL DEL CATÁLOGO (siempre visible) -->
+        <div id="catalogView">
+          <!-- SECCIÓN: Banner y Resumen -->
+          <section class="mb-10 rounded-xl overflow-hidden shadow-2xl bg-white">
+            <!-- Banner Imagen (Placeholder con estilo) -->
+            <div class="banner-sena w-full"></div>
+            <!-- Resumen de Programas Tecnológicos -->
+            <div class="p-6 md:p-8">
+              <h3 class="text-2xl font-bold text-green-700 mb-4">
+                Programas Tecnológicos: Prepárate para el Éxito Laboral
+              </h3>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Los programas tecnológicos del SENA son formaciones **técnicas y
+                profesionales** con una duración aproximada de **dos años**, que
+                buscan preparar a los estudiantes para el mercado laboral.
+              </p>
+              <div
+                class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500"
+              >
+                <p class="font-semibold text-green-800 mb-1">Enfoque Clave:</p>
+                <p class="text-sm text-gray-700">
+                  Se centran en el desarrollo de **habilidades y competencias
+                  prácticas** en áreas con alta demanda.
+                </p>
+              </div>
             </div>
-        </footer>
-    </div><!--Fin contenedor principal-->
-</body>
+          </section>
+          <!-- FIN DE SECCIÓN Banner y Resumen -->
+          <!-- SECCIÓN: Articulación y Convenios Universitarios (AMPLIADO) -->
+          <section class="mb-10 p-6 md:p-8 bg-white rounded-xl shadow-2xl">
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-6 text-center">
+              Articulación y Convenios con Universidades
+            </h2>
+            <p
+              class="text-gray-700 mb-8 text-center max-w-4xl mx-auto leading-relaxed"
+            >
+              El título de Tecnólogo SENA no es un punto final. Gracias a la
+              **Articulación de la Formación Profesional**, nuestros egresados
+              pueden continuar sus estudios y obtener un título universitario
+              con grandes beneficios. Contamos con convenios con diversas
+              instituciones de educación superior.
+            </p>
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"
+            >
+              <!-- Beneficio 1: Homologación -->
+              <div
+                class="p-5 bg-blue-50 rounded-xl shadow-md border-b-4 border-blue-600 flex flex-col items-center text-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-10 w-10 text-blue-700 mb-3"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M12 2l10 5-10 5-10-5 10-5zM2 12l10 5 10-5M2 17l10 5 10-5"
+                  />
+                </svg>
+                <h4 class="text-lg font-bold text-blue-800 mb-2">
+                  Homologación Académica
+                </h4>
+                <p class="text-sm text-gray-700">
+                  **Reconocimiento de créditos:** Se homologan asignaturas del
+                  programa Tecnólogo, permitiendo terminar la carrera
+                  universitaria en menos tiempo.
+                </p>
+              </div>
+              <!-- Beneficio 2: Descuentos -->
+              <div
+                class="p-5 bg-purple-50 rounded-xl shadow-md border-b-4 border-purple-600 flex flex-col items-center text-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-10 w-10 text-purple-700 mb-3"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM12 11V7M15 13H9"
+                  />
+                </svg>
+                <h4 class="text-lg font-bold text-purple-800 mb-2">
+                  Descuentos Especiales
+                </h4>
+                <p class="text-sm text-gray-700">
+                  Accede a **descuentos en matrículas** (entre el 15% y 40% en
+                  algunas instituciones) y becas exclusivas para egresados SENA.
+                </p>
+              </div>
+              <!-- Beneficio 3: Continuidad sin Costo -->
+              <div
+                class="p-5 bg-teal-50 rounded-xl shadow-md border-b-4 border-teal-600 flex flex-col items-center text-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-10 w-10 text-teal-700 mb-3"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 6v6l4 2" />
+                </svg>
+                <h4 class="text-lg font-bold text-teal-800 mb-2">
+                  Paso Directo a Profesional
+                </h4>
+                <p class="text-sm text-gray-700">
+                  Facilidad para continuar la trayectoria de formación en
+                  programas universitarios afines, garantizando una **ruta
+                  educativa ininterrumpida**.
+                </p>
+              </div>
+            </div>
+            <div
+              class="bg-gray-50 p-5 rounded-lg border-l-4 border-gray-400 mt-6"
+            >
+              <p class="font-bold text-gray-800 flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 text-gray-600 mr-2"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                Consulta
+              </p>
+              <p class="text-sm text-gray-600 mt-1">
+                El listado de universidades con convenio y los porcentajes de
+                homologación varían por programa. Se recomienda consultar el
+                listado oficial en la plataforma del SENA.
+              </p>
+            </div>
+          </section>
+          <!-- FIN DE SECCIÓN Articulación y Convenios Universitarios -->
+          <h2 class="text-3xl font-extrabold text-gray-900 mb-6 text-center">
+            Catálogo de Programas de Formación
+          </h2>
+          <p class="text-center text-gray-600 mb-8">
+            Explora los programas Técnicos y Tecnológicos disponibles por línea
+            de formación.
+          </p>
+          <!-- Buscador -->
+          <div class="mb-8 p-4 bg-white shadow-md rounded-xl">
+            <div class="flex items-center space-x-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-green-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Buscar por nombre, nivel o palabra clave..."
+                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500 transition duration-150"
+                onkeyup="handleSearch()"
+              />
+            </div>
+          </div>
+          <!-- Botones de Filtrado (Líneas de Formación) -->
+          <div
+            id="filterButtons"
+            class="mb-8 flex flex-wrap justify-center gap-3"
+          >
+            <button
+              onclick="filterPrograms('TODOS')"
+              data-category="TODOS"
+              class="filter-btn bg-green-800 text-white font-semibold py-2 px-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 active-filter"
+            >
+              Mostrar Todos
+            </button>
+            <button
+              onclick="filterPrograms('Tecnología y Software')"
+              data-category="Tecnología y Software"
+              class="filter-btn bg-white text-gray-700 border border-green-600 font-semibold py-2 px-4 rounded-full shadow-md hover:bg-green-50 transition duration-300"
+            >
+              Tecnología y Software
+            </button>
+            <button
+              onclick="filterPrograms('Salud y Cuidado Personal')"
+              data-category="Salud y Cuidado Personal"
+              class="filter-btn bg-white text-gray-700 border border-green-600 font-semibold py-2 px-4 rounded-full shadow-md hover:bg-green-50 transition duration-300"
+            >
+              Salud y Cuidado Personal
+            </button>
+            <button
+              onclick="filterPrograms('Gestión y Finanzas')"
+              data-category="Gestión y Finanzas"
+              class="filter-btn bg-white text-gray-700 border border-green-600 font-semibold py-2 px-4 rounded-full shadow-md hover:bg-green-50 transition duration-300"
+            >
+              Gestión y Finanzas
+            </button>
+            <button
+              onclick="filterPrograms('Turismo y Gastronomía')"
+              data-category="Turismo y Gastronomía"
+              class="filter-btn bg-white text-gray-700 border border-green-600 font-semibold py-2 px-4 rounded-full shadow-md hover:bg-green-50 transition duration-300"
+            >
+              Turismo y Gastronomía
+            </button>
+            <button
+              onclick="filterPrograms('Deporte y Fitness')"
+              data-category="Deporte y Fitness"
+              class="filter-btn bg-white text-gray-700 border border-green-600 font-semibold py-2 px-4 rounded-full shadow-md hover:bg-green-50 transition duration-300"
+            >
+              Deporte y Fitness
+            </button>
+          </div>
+          <!-- Requisitos y Beneficios (Información Adicional de la Presentación) -->
+          <section class="grid md:grid-cols-2 gap-6 mb-10">
+            <div
+              class="bg-green-100 p-6 rounded-xl shadow-lg border border-green-300"
+            >
+              <h3
+                class="text-xl font-bold text-green-800 mb-3 flex items-center"
+              >
+                Beneficios del Contrato de Aprendizaje
+              </h3>
+              <ul class="list-disc list-inside space-y-1 text-gray-700">
+                <li>Fase Lectiva: 75% SMLMV.</li>
+                <li>Fase Práctica: 100% SMLMV.</li>
+              </ul>
+            </div>
+            <!-- REQUISITOS AMPLIADOS EN ESTE BLOQUE -->
+            <div
+              class="bg-yellow-50 p-6 rounded-xl shadow-lg border border-yellow-300"
+            >
+              <h3
+                class="text-xl font-bold text-yellow-800 mb-3 flex items-center"
+              >
+                Requisitos de Ingreso - Nivel Tecnológico
+              </h3>
+              <div class="space-y-4">
+                <!-- Requisitos Generales -->
+                <p
+                  class="font-semibold text-gray-700 border-b border-yellow-200 pb-1"
+                >
+                  Documentos obligatorios:
+                </p>
+                <ul
+                  class="list-disc list-inside text-sm text-gray-600 space-y-1 ml-4"
+                >
+                  <li>1 foto tipo documento tamaño 3x4.</li>
+                  <li>
+                    Formato Ficha de seguimiento debidamente diligenciado y
+                    firmado con lapicero negro (Se adjunta en la convocatoria).
+                  </li>
+                  <li>
+                    Formato Compromiso del aprendiz debidamente diligenciado y
+                    firmado con lapicero negro (Se adjunta en la convocatoria).
+                  </li>
+                  <li>Copia documento de identidad por ambas caras.</li>
+                  <li>
+                    Copia Diploma o acta de grado 11 bachiller académico. (No se
+                    reciben copias originales).
+                  </li>
+                  <li>
+                    Resultados pruebas saber 11 (ICFES) (Se debe de evidenciar
+                    el nombre del aspirante).
+                  </li>
+                  <li>
+                    Certificado de afiliación a EPS Activo (sirve la que genera
+                    la plataforma ADRES o FOSYGA).
+                  </li>
+                </ul>
+                <!-- Requisitos Adicionales Menores de Edad -->
+                <p
+                  class="font-semibold text-gray-700 border-b border-yellow-200 pb-1 pt-3"
+                >
+                  Requisito adicional para menores de edad:
+                </p>
+                <ul
+                  class="list-disc list-inside text-sm text-gray-600 space-y-1 ml-4"
+                >
+                  <li>
+                    Formato Tratamiento de datos del menor de edad debidamente
+                    diligenciado con lapicero negro.
+                  </li>
+                  <li>
+                    Copia Registro Civil de Nacimiento del Aspirante (Legible).
+                  </li>
+                  <li>
+                    Copia legible del documento de identidad del padre o la
+                    madre (El que firma los formatos).
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <!-- FIN DE REQUISITOS AMPLIADOS -->
+          <!-- Lista de Programas -->
+          <section>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Programas Disponibles
+            </h3>
+            <div
+              id="programsList"
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            >
+              <!-- Los programas se renderizarán aquí con JavaScript -->
+            </div>
+            <div
+              id="noResults"
+              class="hidden text-center p-10 bg-white rounded-xl shadow-md mt-6"
+            >
+              <p class="text-xl text-red-500 font-semibold">
+                No se encontraron programas.
+              </p>
+              <p class="text-gray-500">
+                Intenta con una palabra clave diferente o revisa los filtros.
+              </p>
+            </div>
+          </section>
+        </div>
+        <!-- FIN DE CONTENEDOR PRINCIPAL DEL CATÁLOGO -->
+      </main>
+      <!-- Pie de Página -->
+      <footer class="bg-gray-800 text-white p-6 mt-10">
+        <div class="max-w-7xl mx-auto text-center">
+          <p class="text-sm mb-2">
+            &copy; 2025 SENA Centro de Comercio y Turismo, Regional Quindío.
+          </p>
+        </div>
+      </footer>
+    </div>
+    <!-- Modal Structure (Detalle del Programa) -->
+    <div
+      id="programDetailModal"
+      class="fixed inset-0 bg-gray-900 bg-opacity-80 z-50 flex items-center justify-center hidden p-4"
+    >
+      <!-- Contenedor del Modal -->
+      <div
+        class="bg-white rounded-xl shadow-2xl max-w-lg w-full m-4 transform transition-all overflow-hidden"
+      >
+        <div class="p-6 md:p-8">
+          <div id="modalContent">
+            <!-- Contenido del programa inyectado aquí -->
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-200">
+            <button
+              onclick="closeModal()"
+              class="w-full bg-green-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-green-700 transition shadow-lg"
+            >
+              Cerrar y Volver al Catálogo
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Script de Funcionalidad -->
+    <script>
+      // Array de datos de los programas, incluyendo más información para la vista de detalle
+      const programsData = [
+        // Técnicos
+        {
+          name: "TÉCNICO EN COCINA",
+          level: "Técnico",
+          category: "Turismo y Gastronomía",
+          description:
+            "Forma en técnicas de preparación, conservación y manipulación de alimentos.",
+          details:
+            "Este programa se enfoca en la práctica culinaria internacional y colombiana, incluyendo gestión de costos, higiene y manejo de equipos profesionales. Ideal para trabajar en hoteles, restaurantes o emprendimientos.",
+          duration: "18 meses",
+          keywords:
+            "gastronomía, chef, alimentos, restaurante, arte culinario, comida, culinaria",
+        },
+        {
+          name: "TÉCNICO EN PELUQUERÍA",
+          level: "Técnico",
+          category: "Salud y Cuidado Personal",
+          description:
+            "Desarrolla habilidades en el cuidado y estética del cabello.",
+          details:
+            "Aprenderás técnicas avanzadas de corte, colorimetría, tratamientos capilares y gestión de salones de belleza. Énfasis en tendencias y servicio al cliente.",
+          duration: "12 meses",
+          keywords: "corte, estilo, cabello, belleza, barbería, estética",
+        },
+        {
+          name: "TÉCNICO EN COSMETOLOGÍA Y ESTÉTICA INTEGRAL",
+          level: "Técnico",
+          category: "Salud y Cuidado Personal",
+          description:
+            "Especializa en tratamientos de belleza, cuidado de la piel y técnicas estéticas.",
+          details:
+            "Cubre tratamientos faciales y corporales, masajes terapéuticos, depilación y el uso de equipos especializados, siempre bajo estándares de bioseguridad.",
+          duration: "18 meses",
+          keywords:
+            "piel, tratamientos, belleza, corporal, facial, maquillaje, spa",
+        },
+        {
+          name: "TÉCNICO EN ENFERMERÍA",
+          level: "Técnico",
+          category: "Salud y Cuidado Personal",
+          description:
+            "Prepara para asistir en el cuidado básico y primeros auxilios de pacientes.",
+          details:
+            "Formación en asistencia básica, toma de signos vitales, administración de medicamentos y apoyo en procedimientos médicos, siguiendo protocolos de salud.",
+          duration: "24 meses",
+          keywords:
+            "cuidado paciente, auxiliar, primeros auxilios, hospital, salud, medicina, enfermero",
+        },
 
+        // Tecnológicos
+        {
+          name: "TECNÓLOGO EN GUIANZA TURÍSTICA",
+          level: "Tecnológico",
+          category: "Turismo y Gastronomía",
+          description:
+            "Forma profesionales para guiar y organizar viajes turísticos y rutas patrimoniales.",
+          details:
+            "Desarrollo de habilidades en interpretación cultural, manejo de grupos, diseño de rutas eco-turísticas y uso de tecnologías de información geográfica.",
+          duration: "24 meses",
+          keywords:
+            "guía, viaje, ecoturismo, patrimonio, rutas, tour, operador",
+        },
+        {
+          name: "TECNÓLOGO EN COORDINACIÓN DE SERVICIOS HOTELEROS",
+          level: "Tecnológico",
+          category: "Turismo y Gastronomía",
+          description:
+            "Prepara para la gestión y coordinación de los servicios dentro de establecimientos hoteleros.",
+          details:
+            "Cubre áreas de recepción, reservas, alimentos y bebidas (A&B), gestión de talento humano y optimización de la experiencia del huésped.",
+          duration: "24 meses",
+          keywords:
+            "hotel, alojamiento, recepción, servicios, hospitalidad, administración hotelera",
+        },
+        {
+          name: "TECNÓLOGO EN GESTIÓN CONTABLE Y DE INFORMACIÓN FINANCIERA",
+          level: "Tecnológico",
+          category: "Gestión y Finanzas",
+          description:
+            "Forma en el manejo de registros contables y análisis de información financiera.",
+          details:
+            "Énfasis en NIIF, tributación, elaboración de estados financieros, auditoría interna y análisis de riesgo financiero para toma de decisiones.",
+          duration: "24 meses",
+          keywords:
+            "contabilidad, finanzas, impuestos, balances, auditoría, tesorería, dinero",
+        },
+        {
+          name: "TECNÓLOGO EN GESTIÓN EMPRESARIAL",
+          level: "Tecnológico",
+          category: "Gestión y Finanzas",
+          description:
+            "Prepara para la planeación, organización y dirección de una empresa.",
+          details:
+            "Adquirirás conocimientos en planeación estratégica, marketing, liderazgo, desarrollo de nuevos negocios y optimización de la productividad.",
+          duration: "24 meses",
+          keywords:
+            "empresa, negocios, administración, emprendimiento, mercadeo, gerencia, pymes",
+        },
+        {
+          name: "TECNÓLOGO EN GESTIÓN ADMINISTRATIVA",
+          level: "Tecnológico",
+          category: "Gestión y Finanzas",
+          description:
+            "Forma en la optimización de procesos administrativos y manejo de recursos.",
+          details:
+            "Se enfoca en la gestión eficiente de recursos, manejo de documentación, optimización de flujos de trabajo y soporte a la alta dirección.",
+          duration: "24 meses",
+          keywords:
+            "oficina, procesos, documentos, recursos humanos, administración, secretariado",
+        },
+        {
+          name: "TECNÓLOGO EN GESTIÓN DOCUMENTAL",
+          level: "Tecnológico",
+          category: "Gestión y Finanzas",
+          description:
+            "Especializa en la organización, conservación y gestión de documentos físicos y digitales.",
+          details:
+            "Abarca normativas archivísticas, digitalización, seguridad de la información, clasificación y descripción de series documentales.",
+          duration: "24 meses",
+          keywords:
+            "archivos, documentos, digitalización, legal, información, biblioteca, curador",
+        },
+        {
+          name: "TECNÓLOGO EN GESTIÓN LOGÍSTICA",
+          level: "Tecnológico",
+          category: "Gestión y Finanzas",
+          description:
+            "Forma expertos en la planificación y gestión de la cadena de suministro.",
+          details:
+            "Especialización en compras, transporte, almacenamiento, distribución internacional y optimización de costos logísticos a nivel nacional e internacional.",
+          duration: "24 meses",
+          keywords:
+            "cadena suministro, inventario, transporte, distribución, aduanas, importación, exportación",
+        },
+        {
+          name: "TECNÓLOGO EN REGENCIA DE FARMACIA",
+          level: "Tecnológico",
+          category: "Salud y Cuidado Personal",
+          description:
+            "Prepara para la gestión de servicios farmacéuticos y dispensación de medicamentos.",
+          details:
+            "Capacita en la supervisión de procesos de farmacia, almacenamiento de productos farmacéuticos, dispensación responsable y atención farmacéutica al usuario.",
+          duration: "30 meses",
+          keywords:
+            "farmacia, medicamentos, dispensación, droguería, salud pública, químico",
+        },
+        {
+          name: "TECNÓLOGO EN GESTIÓN ADMINISTRATIVA EN EL SECTOR SALUD",
+          level: "Tecnológico",
+          category: "Salud y Cuidado Personal",
+          description:
+            "Enfocado en la administración de instituciones y procesos del sector salud.",
+          details:
+            "Se centra en la facturación, auditoría de cuentas médicas, gestión de servicios de salud, manejo de normatividad y planeación hospitalaria.",
+          duration: "24 meses",
+          keywords:
+            "salud, clínica, EPS, auditoría médica, citas, hospital, gerencia",
+        },
+        {
+          name: "TECNÓLOGO EN DESARROLLO DE MEDIOS GRÁFICOS VISUALES",
+          level: "Tecnológico",
+          category: "Tecnología y Software",
+          description:
+            "Crea profesionales en diseño y producción de piezas visuales y gráficas.",
+          details:
+            "Formación en conceptualización, composición, tipografía, producción de material impreso y digital, usando herramientas estándar de la industria.",
+          duration: "24 meses",
+          keywords:
+            "diseño gráfico, publicidad, ilustración, branding, arte digital, photoshop, visual",
+        },
+        {
+          name: "TECNÓLOGO EN ANÁLISIS Y DESARROLLO DE SOFTWARE",
+          level: "Tecnológico",
+          category: "Tecnología y Software",
+          description:
+            "Forma desarrolladores de software, desde el análisis hasta la implementación.",
+          details:
+            "Aprenderás a programar en lenguajes modernos, desarrollar aplicaciones web y móviles, gestionar bases de datos y aplicar metodologías ágiles (Scrum).",
+          duration: "27 meses",
+          keywords:
+            "programación, software, desarrollo web, aplicaciones, bases de datos, coding, IA, sistemas",
+        },
+        {
+          name: "TECNÓLOGO EN ANIMACIÓN DIGITAL",
+          level: "Tecnológico",
+          category: "Tecnología y Software",
+          description:
+            "Prepara animadores para la industria del entretenimiento y multimedia.",
+          details:
+            "Incluye modelado 3D, rigging, texturizado, creación de escenarios y post-producción para videojuegos, cine y publicidad.",
+          duration: "24 meses",
+          keywords:
+            "3D, 2D, videojuegos, modelado, efectos visuales, ilustración, cine, motion graphics",
+        },
+        {
+          name: "TECNÓLOGO EN ACTIVIDAD FÍSICA",
+          level: "Tecnológico",
+          category: "Deporte y Fitness",
+          description:
+            "Forma en la planeación y dirección de actividades físicas y deportivas.",
+          details:
+            "Capacita en diseño de rutinas de entrenamiento, nutrición deportiva, evaluación de la condición física y manejo de grupos en gimnasios y centros deportivos.",
+          duration: "24 meses",
+          keywords:
+            "deporte, entrenamiento, fitness, gym, salud, bienestar, coach, ejercicio",
+        },
+      ];
+
+      let activeCategory = "TODOS";
+
+      /**
+       * Muestra la vista de detalle de un programa en un modal popup.
+       * @param {string} programName - El nombre exacto del programa.
+       */
+      function goToProgramDetail(programName) {
+        const program = programsData.find((p) => p.name === programName);
+
+        if (!program) {
+          console.error("Programa no encontrado:", programName);
+          return;
+        }
+
+        const modal = document.getElementById("programDetailModal");
+        const modalContent = document.getElementById("modalContent");
+
+        // Contenido del modal
+        const isTecnologico = program.level === "Tecnológico";
+        const durationStyle = isTecnologico
+          ? "bg-blue-100 text-blue-800"
+          : "bg-orange-100 text-orange-800";
+
+        modalContent.innerHTML = `
+                <h2 class="text-3xl font-extrabold text-green-700 mb-2">${program.name}</h2>
+                <span class="text-md font-semibold px-3 py-1 rounded-full ${durationStyle} inline-block">${program.level}</span>
+                <p class="text-lg text-gray-700 mt-3 mb-4">${program.category}</p>
+                
+                <div class="space-y-4">
+                    <!-- Duración -->
+                    <div class="p-3 bg-gray-50 rounded-lg shadow-inner">
+                        <p class="font-bold text-gray-800">Duración Estimada:</p>
+                        <p class="text-md text-green-600">${program.duration} (Fase Lectiva + Productiva)</p>
+                    </div>
+
+                    <!-- Detalles Ampliados -->
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-1 border-b pb-1">Descripción Ampliada</h3>
+                        <p class="text-gray-700 leading-relaxed text-sm">${program.details}</p>
+                    </div>
+
+                    <!-- Enlace Oficial -->
+                    <div class="pt-2">
+                        <p class="text-sm font-semibold text-gray-800 mb-2">Información Oficial y Convocatorias:</p>
+                        <a href="https://betowa.sena.edu.co/oferta" target="_blank" class="inline-flex items-center text-sm bg-green-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-green-600 transition shadow-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.819l2.256 2.256c.427.427 1.12.427 1.548 0 .427-.427.427-1.12 0-1.548l-2.256-2.256zM13 10l-2 2M5 13l2-2" />
+                            </svg>
+                            Buscar Convocatoria en SOFIA Plus
+                        </a>
+                    </div>
+                </div>
+            `;
+
+        // Mostrar modal
+        modal.classList.remove("hidden");
+      }
+
+      /**
+       * Oculta el modal de detalle del programa.
+       */
+      function closeModal() {
+        document.getElementById("programDetailModal").classList.add("hidden");
+      }
+
+      /**
+       * Renders the list of programs on the page.
+       * @param {Array} programs - The list of programs to display.
+       */
+      function renderPrograms(programs) {
+        const programsList = document.getElementById("programsList");
+        const noResults = document.getElementById("noResults");
+        programsList.innerHTML = "";
+
+        if (programs.length === 0) {
+          programsList.classList.add("hidden");
+          noResults.classList.remove("hidden");
+          return;
+        } else {
+          programsList.classList.remove("hidden");
+          noResults.classList.add("hidden");
+        }
+
+        programs.forEach((program) => {
+          const isTecnologico = program.level === "Tecnológico";
+          const colorClass = isTecnologico ? "bg-blue-600" : "bg-orange-500";
+
+          // Escapamos comillas simples en el nombre para la función JS
+          const escapedName = program.name.replace(/'/g, "\\'");
+
+          const programCard = `
+                    <div class="bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 border border-gray-100 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <h4 class="text-xl font-bold text-gray-800">${program.name}</h4>
+                                <span class="text-xs font-semibold px-3 py-1 rounded-full ${colorClass} text-white">${program.level}</span>
+                            </div>
+                            <p class="text-green-700 font-medium text-sm mb-3">${program.category}</p>
+                            <p class="text-gray-600 text-sm mb-4">${program.description}</p>
+                        </div>
+                        
+                        <!-- Hipervínculos en la parte inferior de la tarjeta -->
+                        <div class="mt-4 flex justify-between items-center border-t pt-3">
+                            <button class="text-sm font-semibold text-gray-500 hover:text-green-800 transition duration-150" onclick="showKeywords('${escapedName}', '${program.keywords}')">
+                                Palabras Clave
+                            </button>
+                            <!-- Llama a la función goToProgramDetail para mostrar el modal -->
+                            <button onclick="goToProgramDetail('${escapedName}')" class="text-sm font-bold bg-green-500 text-white py-1 px-3 rounded-lg hover:bg-green-600 transition duration-150 flex items-center shadow-md">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                                </svg>
+                                Ver Detalles
+                            </button>
+                        </div>
+                    </div>
+                `;
+          programsList.innerHTML += programCard;
+        });
+      }
+
+      /**
+       * Filters the programs based on the selected category.
+       */
+      function filterPrograms(category) {
+        activeCategory = category;
+        document.getElementById("searchInput").value = "";
+
+        // Actualizar el estilo de los botones
+        document.querySelectorAll(".filter-btn").forEach((btn) => {
+          if (btn.dataset.category === category) {
+            btn.classList.remove("bg-white", "text-gray-700");
+            btn.classList.add("bg-green-800", "text-white", "active-filter");
+          } else {
+            btn.classList.remove("bg-green-800", "text-white", "active-filter");
+            btn.classList.add("bg-white", "text-gray-700");
+          }
+        });
+
+        const filtered =
+          category === "TODOS"
+            ? programsData
+            : programsData.filter((program) => program.category === category);
+
+        renderPrograms(filtered);
+      }
+
+      /**
+       * Handles the search logic based on the input value.
+       */
+      function handleSearch() {
+        const query = document
+          .getElementById("searchInput")
+          .value.toLowerCase()
+          .trim();
+
+        if (query.length > 0) {
+          // Desactivar filtros visualmente
+          document.querySelectorAll(".filter-btn").forEach((btn) => {
+            btn.classList.remove("bg-green-800", "text-white", "active-filter");
+            btn.classList.add("bg-white", "text-gray-700");
+          });
+
+          const searchResults = programsData.filter((program) => {
+            const programText = (
+              program.name +
+              " " +
+              program.level +
+              " " +
+              program.category +
+              " " +
+              program.description +
+              " " +
+              program.keywords
+            ).toLowerCase();
+            return programText.includes(query);
+          });
+          renderPrograms(searchResults);
+        } else {
+          // Si la búsqueda está vacía, volvemos al filtro de categoría activo
+          filterPrograms(activeCategory);
+        }
+      }
+
+      /**
+       * Shows a message box with the keywords for a program.
+       */
+      function showKeywords(programName, keywords) {
+        const keywordsArray = keywords.split(",").map((k) => k.trim());
+        const listItems = keywordsArray
+          .map(
+            (k) =>
+              `<li class="p-1 bg-green-100 rounded-lg text-center">${k}</li>`
+          )
+          .join("");
+
+        const card = document.createElement("div");
+        card.className =
+          "fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50";
+        card.innerHTML = `
+                <div class="bg-white p-6 rounded-xl shadow-2xl max-w-sm w-full transform transition-all">
+                    <h3 class="text-xl font-bold text-green-700 mb-3">${programName}</h3>
+                    <p class="text-gray-600 mb-4">Palabras clave asociadas:</p>
+                    <ul class="grid grid-cols-2 gap-2 text-sm text-gray-800">${listItems}</ul>
+                    <button class="mt-4 w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition" onclick="this.parentNode.parentNode.remove()">Cerrar</button>
+                </div>
+            `;
+        document.body.appendChild(card);
+      }
+
+      // Inicializar la página mostrando todos los programas al cargar
+      document.addEventListener("DOMContentLoaded", () => {
+        renderPrograms(programsData);
+      });
+    </script>
+  </body>
 </html>
